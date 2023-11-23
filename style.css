@@ -1,0 +1,140 @@
+@charset "utf-8";
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    background-color: burlywood;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+}
+header{
+    color: aliceblue;
+    background-color: #3b3b3b;
+    display: grid;
+    grid-template-rows: auto auto;
+}
+h1{
+    padding: 17px;
+    text-align: center;
+}
+nav{
+    background-color: black;
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+a{
+    margin-left: 10px;
+    font-size: .9em;
+    padding: 5px;
+    text-decoration: none;
+    color: aliceblue;
+    background-color: black;
+    animation-duration: 1s;
+}
+a:hover{
+    font-weight: bold;
+    animation: ease;
+}
+.container{
+    position: relative;
+    width: 320px;
+    margin: 100px auto 0px auto;
+    perspective: 900px;
+    color: aliceblue;
+}
+.carrossel{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    /* Forwards diz respeito ao sentido da animação (Direção) */
+    animation: rotate360 60s infinite forwards;
+}
+.imagem{
+    border-radius: 5px;
+    position: absolute;
+    top: 40px;
+    left: 10px;
+    right: 10px;
+    width: 290px;
+    height: 187px;
+    background-size: cover;
+    display: flex;
+}
+.imagem span{
+    font-size: 1.2em;
+    margin: auto;
+    text-align: center;
+}
+@keyframes rotate360{
+
+    from{
+        /* Fazer animação de rotação. O eixo selecionadfo é y, pois este será o eixo central da rotação.
+        deg refereçe a grau (360 graus, volta completa). */
+        transform: rotateY(0deg);
+    }
+    to{
+        transform: rotateY(360deg);
+
+    }
+
+}
+/* a :nth-child() pode ser usado para selecionar em quais elementos filhos vc pretende editar. Neste caso o primeiro filho da classe imagem */
+.imagem:nth-child(1){
+    background-image: url(https://cdn.pensador.com/img/authors/so/cr/socrates-l.jpg);
+    transform: rotateY(0deg) translateZ(430px);
+    opacity: 70%;
+}
+.imagem:nth-child(2){
+    background-image: url(https://i0.wp.com/lideranca.blog.br/wp-content/uploads/2019/06/Maquiavel.jpg?ssl=1);
+    transform: rotateY(40deg) translateZ(430px);
+    opacity: 70%;
+}
+.imagem:nth-child(3){
+    background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Thomas_Hobbes_%28portrait%29.jpg/800px-Thomas_Hobbes_%28portrait%29.jpg);
+    transform: rotateY(80deg) translateZ(430px);
+    opacity: 70%;
+}
+.imagem:nth-child(4){
+    background-image: url(https://img.freepik.com/fotos-premium/busto-do-filosofo-ai-generativo-de-aristoteles_849906-7273.jpg);
+    transform: rotateY(120deg) translateZ(430px);
+    opacity: 70%;
+}
+.imagem:nth-child(5){
+    background-image: url(https://i.pinimg.com/736x/4e/1d/50/4e1d50ec0cf160a0b18354e7e2362d16.jpg);
+    transform: rotateY(160deg) translateZ(430px);
+    opacity: 70%;
+}
+.imagem:nth-child(6){
+    background-image: url(https://bibliotecacatolica.com.br/wp-content/uploads/2023/09/MBCjourney_catholic_bust_of_Saint_Augustine_photorealistic_high_95388e62-e4cb-498a-a46d-db3f093dc8b0-1024x574.png);
+    transform: rotateY(200deg) translateZ(430px);
+    opacity: 70%;
+}
+.imagem:nth-child(7){
+    background-image: url(https://primato.coop.br/wp-content/uploads/2017/11/dale-carnegie-9238769-1-402.jpg);
+    transform: rotateY(240deg) translateZ(430px);
+    opacity: 70%;
+}
+.imagem:nth-child(8){
+    background-image: url(https://historiasderoma657052547.files.wordpress.com/2018/02/antoninus_pius_glyptothek_munich_337_detail.jpg?w=1100);
+    transform: rotateY(280deg) translateZ(430px);
+    opacity: 70%;
+}
+.imagem:nth-child(9){
+    background-image: url(https://personajeshistoricos.com/wp-content/uploads/2018/04/heraclito-14.jpg);
+    transform: rotateY(320deg) translateZ(430px);
+    opacity: 70%;
+}
+footer{
+    background-color: #3b3b3b;
+    position: absolute;
+    bottom: -280px;
+    width: 100%;
+    padding: 20px;
+    color: aliceblue;
+    height: 150px;
+}
